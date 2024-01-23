@@ -11,6 +11,8 @@ import com.example.a140124homework.databinding.ActivityMainBinding;
 import com.example.a140124homework.fragment.MyFragment;
 import com.example.a140124homework.fragment.My_secondFragment;
 import com.example.a140124homework.fragment.My_thirdFragment;
+import com.example.a140124homework.thread.DrawThread;
+import com.example.a140124homework.view.DrawView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         binding.btnFr1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                secondFragment.destroyThread();
                 fragmentManager.beginTransaction()
                         .replace(R.id.fr_main, firstFragment)
                         .addToBackStack(null)
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         binding.btnFr3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                secondFragment.destroyThread();
                 fragmentManager.beginTransaction()
                         .replace(R.id.fr_main, thirdFragment)
                         .addToBackStack(null)
